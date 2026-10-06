@@ -1,9 +1,9 @@
 # Respostas · Avaliação Prática de Docker · Cooperativa AgroVale (Turma A)
 
-Nome:
-Matrícula:
-Usuário do GitHub:
-Usuário do Docker Hub:
+Nome: Evelyn Victoria Araújo dos Santos
+Matrícula: 26128015
+Usuário do GitHub: lyndacrebs
+Usuário do Docker Hub: lyndacrebs
 
 Responda com as suas palavras e com o que aconteceu na SUA máquina. Resposta curta e certa vale mais
 do que texto longo copiado. Resposta que contradiz o seu próprio Dockerfile ou compose vale zero.
@@ -11,6 +11,7 @@ do que texto longo copiado. Resposta que contradiz o seu próprio Dockerfile ou 
 ## Parte 1 · Dockerfile do portal
 
 1. Qual imagem base você usou e qual o tamanho final da imagem do portal (saída de `docker images`)?
+
 
 2. Em qual pasta do container o Nginx procura os arquivos do site? Mostre o comando que você usou para
    conferir que o `index.html` está lá dentro.
