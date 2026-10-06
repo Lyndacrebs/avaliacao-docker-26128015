@@ -11,10 +11,11 @@ do que texto longo copiado. Resposta que contradiz o seu próprio Dockerfile ou 
 ## Parte 1 · Dockerfile do portal
 
 1. Qual imagem base você usou e qual o tamanho final da imagem do portal (saída de `docker images`)?
-
+Usei a imagem base oficial nginx:alpine. O tamanho final da imagem foi 93.6MB
 
 2. Em qual pasta do container o Nginx procura os arquivos do site? Mostre o comando que você usou para
    conferir que o `index.html` está lá dentro.
+O Nginx procura os arquivos em /usr/share/nginx/html. Conferi com o comando docker exec teste-portal ls /usr/share/nginx/html.
 
 ## Parte 2 · Docker Hub
 
