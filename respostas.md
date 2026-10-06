@@ -52,9 +52,10 @@ Porque o WordPress acessa o banco pela rede interna do Docker Compose, sem preci
 
 9. Quais comandos você usou para derrubar e subir a stack? Qual comando teria apagado o post que você criou,
    e por quê?
+   Usei docker compose down para derrubar a stack e docker compose up -d para subi-la novamente. docker compose down -v, porque o -v remove os volumes nomeados, apagando os dados persistidos do banco.
 
 10. Código de conclusão impresso pelo verificador:
 
 ```
-(cole aqui)
+ Código de conclusão: AGROVALE-26128015-AD3E4C50
 ```
