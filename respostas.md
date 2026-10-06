@@ -20,8 +20,11 @@ O Nginx procura os arquivos em /usr/share/nginx/html. Conferi com o comando dock
 ## Parte 2 · Docker Hub
 
 3. Nome completo da imagem publicada e link público do repositório no Docker Hub.
+Nome: lyndacrebs/agrovale-portal:1.0-26128015
+Repositório: https://hub.docker.com/repository/docker/lyndacrebs/agrovale-portal/general
 
 4. Por que o `docker login` foi feito com um token de acesso e não com a senha da conta?
+Porque o token é mais seguro para autenticação no Docker Hub e pode ter permissões específicas, sem precisar expor a senha da conta.
 
 ## Parte 3 · Página de manutenção
 
