@@ -42,9 +42,11 @@ A diferença está na ordem das portas. No Docker, a sintaxe é -p porta_do_host
 ## Parte 4 · docker-compose.yml
 
 7. No serviço `blog`, por que `WORDPRESS_DB_HOST` recebe `db` e não `localhost`?
+Porque db é o nome do serviço do MariaDB na rede do Docker Compose. localhost apontaria para o próprio container do WordPress, e não para o banco.
 
 8. Por que o serviço `db` não publica a porta 3306? Se precisar consultar o banco, como faz sem publicar
    a porta? Mostre o comando.
+Porque o WordPress acessa o banco pela rede interna do Docker Compose, sem precisar expor o MariaDB para o computador. Para consultar o banco, posso acessar o container diretamente com docker exec.
 
 ## Parte 5 · Persistência
 

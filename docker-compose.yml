@@ -1,0 +1,49 @@
+services:
+
+  portal:
+    image: lyndacrebs/agrovale-portal:1.0-26128015
+    container_name: portal
+    ports:
+      - "8015:80"
+    restart: unless-stopped
+    networks:
+      - agrovale
+
+  blog:
+    image: wordpress:6-apache
+    container_name: blog
+    ports:
+      - "9015:80"
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: ${MARIADB_DATABASE}
+      WORDPRESS_DB_USER: ${MARIADB_USER}
+      WORDPRESS_DB_PASSWORD: ${MARIADB_PASSWORD}
+    volumes:
+      - wordpress_data:/var/www/html
+    networks:
+      - agrovale
+
+  db:
+    image: mariadb:11.4
+    container_name: db
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: ${MARIADB_DATABASE}
+      MARIADB_USER: ${MARIADB_USER}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - agrovale
+
+volumes:
+  wordpress_data:
+  mariadb_data:
+
+networks:
+  agrovale:
