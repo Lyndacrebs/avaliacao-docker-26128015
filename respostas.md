@@ -32,11 +32,12 @@ Porque o token é mais seguro para autenticação no Docker Hub e pode ter permi
 
 | # | Instrução | O que estava errado | O que você viu acontecer | Como corrigiu |
 |---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
+| 1 | Rodar os comandos antes de alterar o DOckerfile | a página personalizada esperada não apareceu | Alterei o Dockerfile
+| 2 |verificar o Dockerfile antigo | não tinha um COPY apontando para o html | Adicionei o COPY site/ /usr/share/nginx/html/
+| 3 | Rodar o comando que constroi o container denovo | Deu o mesmo erro que na primeira vez | limpei o cache da imagem para contruir o container denovo usando o comando docker build --no-cache -t manutencao:26128015 ./manutencao
 
 6. Qual a diferença entre `-p 7042:80` e `-p 80:7042` no `docker run`? Qual dos dois números é a porta do container?
+A diferença está na ordem das portas. No Docker, a sintaxe é -p porta_do_host:porta_do_container. Portanto, em -p 7042:80, a porta 7042 é do host e a porta 80 é do container. Já em -p 80:7042, a porta 80 é do host e a porta 7042 é do container. Assim, o segundo número é sempre a porta do container.
 
 ## Parte 4 · docker-compose.yml
 
